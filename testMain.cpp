@@ -1,14 +1,24 @@
 #include <iostream>
-#include "src/russian_fix.h"
-
+#include <fstream>
+#include "russian_fix.h"
 
 int main()
 {
-    std::string test;
+    //string test = "Тестовый текст для записи в файл";
+    std::string test2 = "Тестовый текст не нашей либы";
+    
+    std::cout << std::endl
+        << test2 << std::endl;
+    
 
-    std::cout << "Русские символы в консоли, товарищи!\nВведите текст в консоли: ";
+    std::ofstream stream = std::ofstream();
+    stream.open("test.txt");
 
-    std::cin >> test;
-    std::cout << "\n" << test;
+    stream << std::endl
+        << test2 << std::endl;
+
+    stream.close();
+
+    
     return 0;
 }
